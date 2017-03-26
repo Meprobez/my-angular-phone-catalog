@@ -44,7 +44,7 @@
     "protractor": "protractor e2e-tests/protractor.conf.js",
 	
 	"watch-css": "postcss -u autoprefixer -r ./app/*/*/*.css & catw ./app/*/*/*.css -o ./app/core/bundle.css -v",
-    "watch-js": "npm run build-js && cat ./app/static/bower_components.min.js -o ./app/core/bower_components.min.js",
+    "watch-js": "npm run build-js && cat ./app/static/bower_components.min.js > ./app/core/bower_components.min.js",
 	"watch": "npm run watch-js && npm run uglify && npm run watch-css",
 	
     
