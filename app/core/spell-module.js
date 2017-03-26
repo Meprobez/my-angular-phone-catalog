@@ -6,17 +6,17 @@ spell.provider('moduleInvoker',function()
 
 	self.getProviders = function(args)
 	{
-		for(var i = 0;i<arguments.length;i++)
+		for(var i = 0;i<args.length;i++)
 		{
 			if('provider' in args[i])
 				self.providers['$provide'] = args[i];
-			if('component' in arguments[i]) 
+			if('component' in args[i]) 
 				self.providers['$compileProvider'] = args[i];
-			if('register' in arguments[i]) 
+			if('register' in args[i]) 
 				self.providers['$filterProvider'] = args[i];
-			if('when' in arguments[i]) 
+			if('when' in args[i]) 
 				self.providers['$routeProvider'] = args[i];
-			if('html5Mode' in arguments[i]) 
+			if('html5Mode' in args[i]) 
 				self.providers['$locationProvider'] = args[i];
 		}
 	};

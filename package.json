@@ -21,10 +21,11 @@
 	"catw":"1.0.1",
 	"postcss":"5.2.16",
 	"postcss-cli":"3.0.0",
+	"autoprefixer":"6.7.7",
 	"uglify-js":"2.8.16"
   },
   "scripts": {
-    "postinstall": "bower install",
+    "postinstall": "bower install && npm run watch",
 	
     "update-deps": "npm update",
     "postupdate-deps": "bower update",
@@ -42,13 +43,16 @@
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor e2e-tests/protractor.conf.js",
 	
-	"watch-css": "catw  './app/*/*.css' -o ./app/css/bundle.css -v",
-    "watch-js": "watchify ./app/bower-components/*/*.js -o ./app/static/bundle.js -dv",
-    "watch": "npm run watch-css & npm run watch-js",
-    "build-css": "catw  './app/*/*.css'> ./app/css/bundle.css",
-    "build-js": "browserify ./app/bower-components/*/*.js > ./app/static/bundle.js",
-    "build": "npm run build-css && npm run build-js",
-	"autoprefixer": "postcss -u autoprefixer -r ./app/css/*",
+	"watch-css": "postcss -u autoprefixer -r ./app/*/*/*.css & catw ./app/main/*/*.css -o ./app/static/bundle.css -v",
+    "watch-js": "npm run build-js && catw ./app/static/bower_components.min.js -o ./app/bower_components/bower_components.min.js",
+	"watch": "npm run uglify & npm run build-js &  npm run watch-css",
+	
+    
+	"build-css": "postcss -u autoprefixer -r ./app/*/*/*.css && cat ./app/main/*/*.css > ./app/static/bundle.css",
+    "build-js": "cat ./app/bower_components/angular/*.min.js > ./app/static/bower_components.min.js && cat ./app/bower_components/angular-*/*.min.js >> ./app/static/bower_components.min.js && cat ./app/bower_components/*/*/*.min.js  >> ./app/static/bower_components.min.js && cat ./app/bower_components/*.min.js/*.min.js  >> ./app/static/bower_components.min.js",
+    "build": "npm run uglify & npm run build-css & npm run build-js",
+	
+	"uglify": "uglifyjs ./app/core/*.js -c -m  --reserve-domprops  -o ./app/core/spell-module.min.js",
 
     "update-index-async": "node -e \"var fs=require('fs'),indexFile='app/index-async.html',loaderFile='app/bower_components/angular-loader/angular-loader.min.js',loaderText=fs.readFileSync(loaderFile,'utf-8').split(/sourceMappingURL=angular-loader.min.js.map/).join('sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map'),indexText=fs.readFileSync(indexFile,'utf-8').split(/\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/).join('//@@NG_LOADER_START@@\\n'+loaderText+'    //@@NG_LOADER_END@@');fs.writeFileSync(indexFile,indexText);\""
   }

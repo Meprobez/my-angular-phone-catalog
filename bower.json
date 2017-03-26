@@ -12,11 +12,10 @@
     "angular-resource": "1.6.x",
     "angular-route": "1.6.x",
     "bootstrap": "3.3.x",
-	"jquery":"1.11.2",
-    "jquery": "3.2.x",
+	"jquery": "3.2.x",
 	"angular-ui-router":"1.0.0-rc.1",
 	"babel":"5.8.38",
-	"xml2json.min.js":"1.2.0",
-	"normilize.css":"5.0.x"
+	"xml2json.min.js":"1.2.x",
+	"normalize.css":"5.0.x"
   }
 }
