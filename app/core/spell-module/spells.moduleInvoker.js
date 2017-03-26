@@ -1,5 +1,5 @@
-var spell = angular.module('spell-module',['ngRoute']);
-spell.provider('moduleInvoker',function()
+angular.module('spell-module')
+.provider('moduleInvoker',function()
 {
 	var self = this;
 	self.providers = [];
@@ -99,66 +99,3 @@ spell.provider('moduleInvoker',function()
 		};
 	}];
 })
-spell.provider('$history',function()
-{
-	var self = this;
-	self.history = [];
-
-	self.$get = function()
-	{
-		var $history = {
-			
-			historyMaintain:function($rootScope)
-			{
-				$rootScope.$on('$routeChangeSuccess',function(event,current,previous)
-				{
-					if(current&&current.$$route.originalPath!=$history.getHistory()[$history.getHistory().length-1])
-						$history.saveHistory(current.$$route.originalPath);
-					$history.logHistory();
-				});
-			},
-		
-			saveHistory:function(url){ self.history.push(url); },
-
-			getPreviousPage:function(){ return self.history[self.history.length-1] },
-
-			getHistory:function(){ return self.history; },
-
-			logHistory:function() { console.log(self.history); },
-
-			historySearch:function(url) { var exists = false; self.history.forEach(function(el){if(el===url)exists=true;}); },
-
-			removeLastEntry:function() { self.history=self.history.slice(0,self.history.length-1);}
-	
-		}
-		return $history;
-   };
-})
-spell.factory('statesMaintain',['$location',function($location)
-{
-	var states=[];
-	return {
-		maintainId:function(id,$routeParams)
-		{
-			var cutedString = '';
-			for(prop in $routeParams)
-			{
-				cutedString+='/'+$routeParams[prop];
-			}
-			console.log(cutedString);
-			id =id.replace(cutedString,'');
-			console.log(id);
-			return id;
-		},
-
-		saveState:function(name,state) { states[name] = state; },
-
-		getState:function(name) { return states[name]||undefined; },
-
-		removeState:function(name) { state[name] = undefined; },
-
-		getStatesArray:function() { return states;},
-			
-		logStatesArray:function() { console.log(states); }
- 	};
-}])
