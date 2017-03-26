@@ -5815,7 +5815,6 @@
         "$timeout",
         "$rootScope.Scope",
         "angular.mock.TzDate",
-        function
         "angular.mock.dump",
         "angular.mock.inject",
         "angular.mock.module",
@@ -5838,7 +5837,6 @@
         "ngTouch",
         "ngSwipeLeft",
         "ngSwipeRight",
-        "$swipe
 
     ]
 }
