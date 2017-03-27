@@ -1,4 +1,4 @@
-angular.module('spell-module')
+angular.module('spell')
 .factory('statesMaintain',['$location',function($location)
 {
 	var states=[];

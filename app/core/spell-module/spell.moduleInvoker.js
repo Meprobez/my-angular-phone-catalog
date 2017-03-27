@@ -1,4 +1,4 @@
-angular.module('spell-module')
+angular.module('spell')
 .provider('moduleInvoker',function()
 {
 	var self = this;

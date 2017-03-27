@@ -1,4 +1,4 @@
-angular.module('spell-module')
+angular.module('spell')
 .provider('$history',function()
 {
 	var self = this;
