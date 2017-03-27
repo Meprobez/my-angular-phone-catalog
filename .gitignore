@@ -12,5 +12,6 @@ bower_components/
 *.pdf
 bower_components/bower_components.min.js
 spell.min.js
+main.min.js
 bundle.min.js
 bundle.min.css

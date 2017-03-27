@@ -1,10 +1,11 @@
+'use strict';
 angular.module('spell')
 .provider('$history',function()
 {
 	var self = this;
 	self.history = [];
 
-	self.$get = function()
+	self.$get = ['$route',function($route)
 	{
 		var $history = {
 			
@@ -32,5 +33,5 @@ angular.module('spell')
 	
 		}
 		return $history;
-   };
+   }];
 })

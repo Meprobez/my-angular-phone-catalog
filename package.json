@@ -44,7 +44,7 @@
     "protractor": "protractor e2e-tests/protractor.conf.js",
 	
 	"watch-js": "cat ./app/bower_components/angular/*.min.js > ./app/bower_components/bower_components.min.js && cat ./app/bower_components/angular-*/*.min.js >> ./app/bower_components/bower_components.min.js && cat ./app/bower_components/*/*/*.min.js  >> ./app/bower_components/bower_components.min.js && cat ./app/bower_components/*.min.js/*.min.js  >> ./app/bower_components/bower_components.min.js",
-    "uglify": "uglifyjs ./app/core/spell-module/*.js -c -m  --reserve-domprops  -o ./app/core/spell.min.js",
+    "uglify": "uglifyjs ./app/core/spell-module/*.js -c -m  --reserve-domprops  -o ./app/core/spell.min.js && uglifyjs ./app/main/*.js -c -m  --reserve-domprops  -o ./app/main.min.js",
 	"build-js": "cat ./app/core/spell.min.js >> ./app/bower_components/bower_components.min.js && cat ./app/bower_components/bower_components.min.js > ./app/static/bundle.min.js",
 	"build-css": "postcss -u autoprefixer -r ./app/*/*/*.css && cat ./app/*/*/*.css > ./app/static/bundle.css -v",
    

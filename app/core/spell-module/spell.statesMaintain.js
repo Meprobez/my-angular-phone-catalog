@@ -1,5 +1,6 @@
+'use strict';
 angular.module('spell')
-.factory('statesMaintain',['$location',function($location)
+.factory('statesMaintain',function()
 {
 	var states=[];
 	return {
@@ -26,4 +27,4 @@ angular.module('spell')
 			
 		logStatesArray:function() { console.log(states); }
  	};
-}])
+})
