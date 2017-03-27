@@ -6,6 +6,8 @@ getData.$inject = ['$http'];
 
 function getData($http) 
 {
+    var self = this;
+    self.responseData = []; 
     var service = {
         getPhonesList: getPhonesList,
         getPhoneDetail: getPhoneDetail
@@ -15,20 +17,22 @@ function getData($http)
 
     function request(path)
     {
-        var responseData;
-        $http({
+       var res = [];
+       var responseData = $http({
             method:'GET',
             url:path,
-            cache:true
-        }).then(function(response){responseData = response.data;})
-        .catch(function(error){alert("Error loading file, "+error.status+" "+error.statusText);});
-        return responseData
+            cache:true}).then(function(response){console.log(response.data);return response.data});
+        res = responseData;
+        console.log(res);
+        
     };
 
     function getPhonesList() 
     {
-        var url = "application-data/phones/phones.json";
-        return request(url);
+        var phonesList,url = "application-data/phones/phones.json";
+        phonesList = request(url);
+        console.log(phonesList);
+        return phonesList; 
     };
 
     function getPhoneDetail(phoneId)
