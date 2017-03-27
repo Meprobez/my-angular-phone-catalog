@@ -45,7 +45,7 @@
 	
 	"watch-js": "cat ./app/bower_components/angular/*.min.js > ./app/bower_components/bower_components.min.js && cat ./app/bower_components/angular-*/*.min.js >> ./app/bower_components/bower_components.min.js && cat ./app/bower_components/*/*/*.min.js  >> ./app/bower_components/bower_components.min.js && cat ./app/bower_components/*.min.js/*.min.js  >> ./app/bower_components/bower_components.min.js",
     "uglify": "uglifyjs ./app/core/spell-module/*.js -c -m  --reserve-domprops  -o ./app/core/spell.min.js",
-	"build-js": "cat ./app/core/core.min.js >> ./app/bower_components/bower_components.min.js && cat ./app/bower_components/bower_components.min.js > .app/static/bundle.min.js  ",
+	"build-js": "cat ./app/core/spell.min.js >> ./app/bower_components/bower_components.min.js && cat ./app/bower_components/bower_components.min.js > ./app/static/bundle.min.js",
 	"build-css": "postcss -u autoprefixer -r ./app/*/*/*.css && cat ./app/*/*/*.css > ./app/static/bundle.css -v",
    
     "build": "npm run watch-js && npm run uglify && npm run build-js && npm run build-css",
