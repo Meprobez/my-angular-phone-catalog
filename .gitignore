@@ -10,3 +10,7 @@ bower_components/
 *~
 *.txt
 *.pdf
+bower_components/bower_components.min.js
+spell.min.js
+bundle.min.js
+bundle.min.css
