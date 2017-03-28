@@ -6,14 +6,20 @@ angular.module('phonecatalog')
     controller:phonesController
 });
 
-phonesController.$inject = ['getData'];
+phonesController.$inject = ['getData','$rootScope'];
 
-function phonesController(getData)
+function phonesController(getData,$rootScope)
 {
     var self = this;
-    self.phones = [];
-    self.phones = getData.getPhonesList();
+    
+    self.$onInit = onInit;
     self.log = log;
+   
+    function onInit()
+    {
+        self.phones = [];
+        getData.getPhonesList().then(function(response){self.phones = response;});
+    };
 
     function log()
     {

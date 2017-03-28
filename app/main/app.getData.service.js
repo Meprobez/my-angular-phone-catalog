@@ -2,12 +2,14 @@
 angular.module('phonecatalog')
 .factory('getData',getData);
 
-getData.$inject = ['$http'];
+getData.$inject = ['$http','$q'];
 
-function getData($http) 
+function getData($http,$q) 
 {
     var self = this;
-    self.responseData = []; 
+    self.responseData = ''; 
+    self.request = request;
+
     var service = {
         getPhonesList: getPhonesList,
         getPhoneDetail: getPhoneDetail
@@ -17,26 +19,23 @@ function getData($http)
 
     function request(path)
     {
-       var res = [];
-       var responseData = $http({
-            method:'GET',
-            url:path,
-            cache:true}).then(function(response){console.log(response.data);return response.data});
-        res = responseData;
-        console.log(res);
-        
+       return $http({
+                method:'GET',
+                url:path,
+                cache:true
+            }).then(function(response){return response.data;})
+            .catch(function(error){alert("Error loading file, "+error.status+" "+error.statusText+". Please check your internet connection...");});
     };
 
     function getPhonesList() 
     {
-        var phonesList,url = "application-data/phones/phones.json";
-        phonesList = request(url);
-        console.log(phonesList);
-        return phonesList; 
+       var path = "application-data/phones/phones.json";
+       return request(path).then(function(response){return response});
     };
 
     function getPhoneDetail(phoneId)
     {
-
+        console.log(self.responseData);
+        return self.responseData;
     };
 }

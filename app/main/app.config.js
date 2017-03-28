@@ -5,7 +5,7 @@ angular.module('phonecatalog', [
   'ngAnimate',
   'ngRoute',
   'ui.router',
-  'spell'
+  'spell',
 ])
 .config(['$provide','$compileProvider','$filterProvider','$routeProvider','$locationProvider','moduleInvokerProvider','$httpProvider','$sceDelegateProvider',function($provide,$compileProvider,$filterProvider,$routeProvider,$locationProvider,moduleInvokerProvider,$httpProvider,$sceDelegateProvider)
 {

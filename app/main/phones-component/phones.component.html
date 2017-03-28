@@ -1,5 +1,6 @@
-<div>
-    <div ng-repeat="phone in $ctrl.phones">
+<div class="phones-container">
+    <div ng-repeat="phone in $ctrl.phones" class="phone-field">
+        <img ng-src={{phone.imageUrl}} height="100">
         <span>{{phone.name}}</span>
     </div>
     <div ng-click="$ctrl.log()">log</div>
