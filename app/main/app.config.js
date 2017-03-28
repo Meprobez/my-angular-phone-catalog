@@ -7,8 +7,14 @@ angular.module('phonecatalog', [
   'ui.router',
   'spell',
 ])
-.config(['$provide','$compileProvider','$filterProvider','$routeProvider','$locationProvider','moduleInvokerProvider','$httpProvider','$sceDelegateProvider',function($provide,$compileProvider,$filterProvider,$routeProvider,$locationProvider,moduleInvokerProvider,$httpProvider,$sceDelegateProvider)
+.config(config);
+
+config.$inject = ['$provide','$compileProvider','$filterProvider','$routeProvider','$locationProvider','moduleInvokerProvider','$httpProvider','$sceDelegateProvider','$stateProvider'];
+
+function config($provide,$compileProvider,$filterProvider,$routeProvider,$locationProvider,moduleInvokerProvider,$httpProvider,$sceDelegateProvider,$stateProvider)
 {
+////////////////////////////////////Basic Configuration//////////////////////////////////////
+
 	moduleInvokerProvider.getProviders(arguments);
 	$compileProvider.preAssignBindingsEnabled(true);
 	$routeProvider.eagerInstantiationEnabled(false)
@@ -37,5 +43,22 @@ angular.module('phonecatalog', [
     // Allow JSONP calls that match this pattern
     'https://some.dataserver.com/**.jsonp?**'
   ]);
-  
-}])
+
+/////////////////////////////////////////Routing/////////////////////////////////////////////
+var phones = {
+    name: 'phones',
+    url: '/',
+    component:'phones'
+  }
+
+  $stateProvider.state(phones);
+
+var phoneDetail = {
+  name: 'phoneDetail',
+  url: '/phoneDetail/{phoneId}',
+  component: 'phone-detail'
+}
+
+  $stateProvider.state(phoneDetail);
+
+}

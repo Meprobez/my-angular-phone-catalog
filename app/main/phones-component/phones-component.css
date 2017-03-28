@@ -1,0 +1,79 @@
+.phones-component
+{
+    position:relative;
+    left:200px;
+    min-width:1000px;  
+    display:-ms-inline-grid;  
+    display:inline-grid
+}
+
+/*Search and FIlter side bar*/
+
+.phones-search
+{
+    position:relative;
+    top:3.6em;
+    left:-8px;
+    border:1px solid lightgrey;
+    width:29%;
+    max-width:200px;
+}
+.phones-search:hover,.searchActiveClass, .filter-by select:hover
+{
+    border:1px solid rgb(31, 131, 224);
+}
+.phones-search input
+{
+     border:none;
+     outline:none; 
+}
+.filter-by select
+{
+    position:relative;
+    top:4.2em;
+    left:-8px;
+    min-height:25px;
+    width:29%;
+    max-width:200px;
+    height:.7em;
+    border:1px solid lightgrey;
+}
+
+/* List of phones */
+.phones-container
+{
+    position:relative;
+    left:200px;
+    width:69%;
+    max-width:650px;
+    min-width:500px;
+    
+}
+.phone-field
+{
+     height:120px;
+     border:1px solid lightgrey;
+     margin-bottom:.75em;
+     
+     padding-right:1.5em;  
+      
+}
+
+.phone-field img
+{
+    margin-top:.5em;
+    margin-right:.9em;
+    float:left;
+    padding-left:1.5em
+}
+.phone-field-name
+{
+   margin-top:.5em;
+   font-size:medium;
+   font-weight:600;
+}
+.phone-field-name
+{
+    height:8%
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBob25lcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztJQUVJLGtCQUFhO0lBQ2IsV0FBQTtJQUNILGlCQUFBO0lBQ0csd0JBQW1CO0lBQW5CLG1CQUFtQjtDQUN0Qjs7QUFFRCw4QkFBOEI7O0FBRTlCOztJQUVJLGtCQUFrQjtJQUNsQixTQUFTO0lBQ1QsVUFBVTtJQUNWLDJCQUEyQjtJQUMzQixVQUFVO0lBQ1YsZ0JBQWdCO0NBQ25CO0FBQ0Q7O0lBRUksbUNBQW1DO0NBQ3RDO0FBQ0Q7O0tBRUssWUFBWTtLQUNaLGFBQWE7Q0FDakI7QUFDRDs7SUFFSSxrQkFBa0I7SUFDbEIsU0FBUztJQUNULFVBQVU7SUFDVixnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLDJCQUEyQjtDQUM5Qjs7QUFFRCxvQkFBb0I7QUFDcEI7O0lBRUksa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxVQUFVO0lBQ1YsZ0JBQWdCO0lBQ2hCLGdCQUFnQjs7Q0FFbkI7QUFDRDs7S0FFSyxhQUFhO0tBQ2IsMkJBQTJCO0tBQzNCLG9CQUFvQjs7S0FFcEIsb0JBQW9COztDQUV4Qjs7QUFFRDs7SUFFSSxnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxrQkFBa0I7Q0FDckI7QUFDRDs7R0FFRyxnQkFBZ0I7R0FDaEIsaUJBQWlCO0dBQ2pCLGdCQUFnQjtDQUNsQjtBQUNEOztJQUVJLFNBQVM7Q0FDWiIsImZpbGUiOiJwaG9uZXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5waG9uZXMtY29udGFpbmVyXHJcbntcclxuICAgIGhlaWdodDoxMjBweDtcclxuICAgIGJvcmRlcjoxcHggc29saWQgZ3JleTtcclxufSJdfQ== */
