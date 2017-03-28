@@ -14,15 +14,18 @@ function phonesController(getData,$rootScope)
     
     self.$onInit = onInit;
     self.log = log;
-   
+
+    self.searchActiveClass = false;
+    self.filter="";
     function onInit()
     {
         self.phones = [];
         getData.getPhonesList().then(function(response){self.phones = response;});
+        self.searchInput = "";
     };
 
     function log()
     {
         console.log(self);
-    }
+    };
 }

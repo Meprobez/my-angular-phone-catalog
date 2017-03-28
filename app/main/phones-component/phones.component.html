@@ -1,7 +1,29 @@
-<div class="phones-container">
-    <div ng-repeat="phone in $ctrl.phones" class="phone-field">
+<div class="phones-component">
+
+ <div class="filter-search">
+ 
+  <div class="phones-search" ng-class="{searchActiveClass:$ctrl.searchActiveClass}">  
+    <form >
+        <img ng-src="application-data/img/search_glass.PNG">
+        <input type = "text"  ng-model="$ctrl.searchInput" ng-focus="$ctrl.searchActiveClass = true" ng-blur="$ctrl.searchActiveClass = false"/>
+    </form>
+
+  </div>
+ 
+  <div class="filter-by">
+    <select ng-model="$ctrl.filter">
+          <option value="age">By age</option>
+          <option value="name">By name</option>
+    </select>
+  </div>
+ </div>
+
+ <div class="phones-container">
+   <div ng-repeat="phone in $ctrl.phones | orderBy:$ctrl.filter | filter:$ctrl.searchInput" class="phone-field">
         <img ng-src={{phone.imageUrl}} height="100">
-        <span>{{phone.name}}</span>
+        <div class="phone-field-name">{{phone.name}}</div><br>
+        <span class="phone-field-snippet">{{phone.snippet}}</span>
     </div>
     <div ng-click="$ctrl.log()">log</div>
-<div>
+ </div>
+</div>
