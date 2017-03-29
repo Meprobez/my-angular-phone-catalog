@@ -1,0 +1,51 @@
+.name-description-images
+{
+    position:relative;
+    top:6em;
+    left:20em;
+    min-width:900px;
+    max-width:1000px;
+}
+.phone-image img
+{
+    border:1px solid lightgrey;
+    padding:auto;
+}
+.phone-image img
+{
+    float:left;
+    padding:2em;
+}
+
+.name-description
+{
+    position:relative;
+    left:8em;
+
+}
+
+.phone-name
+{
+    font-size:2em;
+}
+
+.additional-features
+{
+    font-weight:600;
+    position:relative;
+    top:3em;
+}
+
+.additional-features-description
+{
+    position:relative;
+    top:3em;
+}
+.thumbnails 
+{
+    position:relative;
+    left:8em;
+    top:3em;
+    width:1%
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwaG9uZS1kZXRhaWwtY29tcG9uZW50LmNzcyJ9 */
