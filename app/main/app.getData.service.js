@@ -30,12 +30,12 @@ function getData($http,$q)
     function getPhonesList() 
     {
        var path = "application-data/phones/phones.json";
-       return request(path).then(function(response){return response});
+       return request(path);
     };
 
     function getPhoneDetail(phoneId)
     {
-        console.log(self.responseData);
-        return self.responseData;
+        var path = "application-data/phones/"+phoneId+".json";
+        return request(path).then(function(response){return response});
     };
 }

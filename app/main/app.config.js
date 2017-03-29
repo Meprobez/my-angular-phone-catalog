@@ -54,10 +54,17 @@ var phones = {
 var phoneDetail = {
   name: 'phone-detail',
   url: '/phone-detail/{phoneId}',
-  component: 'phoneDetail'
-};
+  component: 'phoneDetail',
+  resolve: { phoneData:getPhoneData }
+  };
 
   $stateProvider.state(phones);
   $stateProvider.state(phoneDetail);
 
+getPhoneData.$inject = ['getData','$transition$'];
+
+function getPhoneData(getData, $transition$) 
+{
+   return getData.getPhoneDetail($transition$.params().phoneId).then(function(response){return response;}); 
+};
 }
