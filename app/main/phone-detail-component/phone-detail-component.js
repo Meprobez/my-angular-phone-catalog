@@ -1,28 +1,18 @@
 'use strict';
 angular.module('phonecatalog')
-.component('phone-detail',
+.component('phoneDetail',
 {
     templateUrl:'main/phone-detail-component/phone-detail-component.html',
     controller:phoneDetailController
 });
 
-phoneDetailController.$inject = ['getData','$rootScope','$transition$'];
+phoneDetailController.$inject = ['getData','$rootScope'];
 
-function phoneDetailController(getData,$rootScope,$transition$)
+function phoneDetailController(getData,$rootScope)
 {
     var self = this;
-    
-    self.$onInit = onInit;
     self.log = log;
-
-    self.searchActiveClass = false;
-    self.filter="";
-    
-    function onInit()
-    {
-        self.phone = {};
-        getData.getPhoneDetail($transition$.params().personId).then(function(response){self.phone = response;});
-    };
+  
 
     function log()
     {

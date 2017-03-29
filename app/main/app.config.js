@@ -49,16 +49,15 @@ var phones = {
     name: 'phones',
     url: '/',
     component:'phones'
-  }
-
-  $stateProvider.state(phones);
+  };
 
 var phoneDetail = {
   name: 'phone-detail',
   url: '/phone-detail/{phoneId}',
-  component: 'phone-detail'
-}
+  component: 'phoneDetail'
+};
 
+  $stateProvider.state(phones);
   $stateProvider.state(phoneDetail);
 
 }
