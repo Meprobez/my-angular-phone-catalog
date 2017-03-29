@@ -20,8 +20,10 @@
 
  <div class="phones-container">
    <div ng-repeat="phone in $ctrl.phones | orderBy:$ctrl.filter | filter:$ctrl.searchInput" class="phone-field">
-        <img ng-src={{phone.imageUrl}} height="100">
-        <div class="phone-field-name">{{phone.name}}</div><br>
+        <a  ui-sref="phone-detail({ phoneId: phone.id })">
+            <img ng-src={{phone.imageUrl}} height="100">
+        </a>
+        <div class="phone-field-name"><a ui-sref="phone-detail({ phoneId: phone.id })">{{phone.name}}<a/></div><br>
         <span class="phone-field-snippet">{{phone.snippet}}</span>
     </div>
     <div ng-click="$ctrl.log()">log</div>

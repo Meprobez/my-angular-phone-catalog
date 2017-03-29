@@ -54,8 +54,8 @@ var phones = {
   $stateProvider.state(phones);
 
 var phoneDetail = {
-  name: 'phoneDetail',
-  url: '/phoneDetail/{phoneId}',
+  name: 'phone-detail',
+  url: '/phone-detail/{phoneId}',
   component: 'phone-detail'
 }
 

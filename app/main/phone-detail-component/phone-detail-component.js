@@ -17,6 +17,7 @@ function phoneDetailController(getData,$rootScope,$transition$)
 
     self.searchActiveClass = false;
     self.filter="";
+    
     function onInit()
     {
         self.phone = {};
