@@ -1,0 +1,7 @@
+<div class="{{$ctrl.class}} phone-content-container">
+    <span ng-cloak class="content-title">{{$ctrl.content}}:</span>
+    <div ng-repeat="data in $ctrl.data" class="content-data" ng-cloak>
+        <span class="content-name">{{$ctrl.output[$index]}}:</span>
+        <span >{{data}}</span><br>
+    </div>
+</div>

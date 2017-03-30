@@ -14,7 +14,6 @@
     "bootstrap": "3.3.x",
 	"jquery": "3.2.x",
 	"angular-ui-router":"1.0.0-rc.1",
-	"babel":"5.8.38",
 	"xml2json.min.js":"1.2.x",
 	"normalize.css":"5.0.x"
   }

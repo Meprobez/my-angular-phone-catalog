@@ -1,4 +1,4 @@
-.phones-component
+.phones-component 
 {
     position:relative;
     left:200px;
@@ -41,7 +41,7 @@
 }
 
 /* List of phones */
-.phones-container
+.phones-container 
 {
     position:relative;
     left:200px;
@@ -50,7 +50,7 @@
     min-width:500px;
     
 }
-.phone-field
+.phone-field /*div that contains phone*/
 {
      height:120px;
      border:1px solid lightgrey;

@@ -1,0 +1,17 @@
+.phone-field.ng-animate
+{
+   transition: .5s linear all; 
+}
+.phone-field.ng-enter, .phone-field.ng-move, .phone-field.ng-leave.ng-leave-active
+{
+    height:0px;
+    opacity:0;
+    overflow: hidden;
+   
+}
+.phone-field.ng-enter.ng-enter-active, .phone-field.ng-move.ng-move-active,.phone-field.ng-leave
+{
+   height:120px;
+    opacity:1; 
+  
+}
