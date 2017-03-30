@@ -1,29 +1,25 @@
 .name-description-images
 {
     position:relative;
-    top:6em;
-    left:20em;
-    min-width:900px;
+    top:3em;
+    left:10em;
     max-width:1000px;
 }
 .phone-image img
 {
     border:1px solid lightgrey;
     padding:auto;
-}
-.phone-image img
-{
     float:left;
     padding:2em;
+    position:relative;
+    top:3em;
 }
-
 .name-description
 {
     position:relative;
     left:8em;
 
 }
-
 .phone-name
 {
     font-size:2em;
@@ -32,20 +28,22 @@
 .additional-features
 {
     font-weight:600;
-    position:relative;
-    top:3em;
 }
 
 .additional-features-description
 {
-    position:relative;
-    top:3em;
+    
 }
 .thumbnails 
 {
     position:relative;
-    left:8em;
-    top:3em;
-    width:1%
+    left:7em;
+    display:inline;
+    top:-1em;
 }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwaG9uZS1kZXRhaWwtY29tcG9uZW50LmNzcyJ9 */
+.thumbnails img
+{
+    width:12%;
+    margin:1em
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBob25lLWRldGFpbC1jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztJQUVJLGtCQUFrQjtJQUNsQixRQUFRO0lBQ1IsVUFBVTtJQUNWLGlCQUFnQjtDQUNuQjtBQUNEOztJQUVJLDJCQUEyQjtJQUMzQixhQUFBO0lBQ0EsV0FBQTtJQUNILFlBQUE7SUFDRCxrQkFBQTtJQUNBLFFBQUE7Q0FDQztBQUNEOztJQUVJLGtCQUFrQjtJQUN0QixTQUFBOztDQUVDO0FBQ0Q7O0lBRUksY0FBYztDQUNsQjs7QUFFQTs7SUFFQyxnQkFBQTtDQUNBOztBQUVEOzs7Q0FHQztBQUNEOztJQUVJLGtCQUFrQjtJQUNsQixTQUFBO0lBQ0EsZUFBQTtJQUNBLFNBQVE7Q0FDWDtBQUNEOztJQUVJLFVBQVU7SUFDVixVQUFTO0NBQ1oiLCJmaWxlIjoicGhvbmUtZGV0YWlsLWNvbXBvbmVudC5jc3MifQ== */

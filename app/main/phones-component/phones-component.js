@@ -20,7 +20,7 @@ function phonesController(getData,$rootScope)
     function onInit()
     {
         self.phones = [];
-        getData.getPhonesList().then(function(response){self.phones = response;});
+        getData.getPhonesList().then(response => self.phones = response);
         self.searchInput = "";
     };
 

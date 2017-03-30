@@ -22,7 +22,8 @@
 	"postcss":"5.2.16",
 	"postcss-cli":"3.0.0",
 	"autoprefixer":"6.7.7",
-	"uglify-js":"2.8.16"
+	"uglify-js":"2.8.16",
+	"es6-browser":"0.2.2"
   },
   "scripts": {
     "postinstall": "bower install && npm run build",

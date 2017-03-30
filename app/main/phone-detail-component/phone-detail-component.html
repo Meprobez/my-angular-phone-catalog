@@ -9,8 +9,8 @@
             <span class="additional-features">Additional features:</span>
             <span class="additional-features-description">{{$ctrl.phoneData.additionalFeatures}}</span>
       </div><br>
-      <div>
-         <div ng-repeat="image in $ctrl.phoneData.images" class="thumbnails">
+      <div class="thumbnails">
+         <div ng-repeat="image in $ctrl.phoneData.images">
             <img ng-src="application-data/{{image}}">
          </div>
       </div>
