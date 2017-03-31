@@ -44,6 +44,7 @@ function config($provide,$compileProvider,$filterProvider,$routeProvider,$locati
   ]);
 
 /////////////////////////////////////////Routing/////////////////////////////////////////////
+$routeProvider.when('/',{redirectTo: "/"});
 var phones = {
     name: 'phones',
     url: '/',
