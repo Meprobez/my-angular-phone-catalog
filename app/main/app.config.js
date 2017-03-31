@@ -14,8 +14,9 @@ config.$inject = ['$provide','$compileProvider','$filterProvider','$routeProvide
 function config($provide,$compileProvider,$filterProvider,$routeProvider,$locationProvider,moduleInvokerProvider,$httpProvider,$sceDelegateProvider,$stateProvider)
 {
 ////////////////////////////////////Basic Configuration//////////////////////////////////////
-
+	console.log(arguments);
 	moduleInvokerProvider.getProviders(arguments);
+	console.log(moduleInvokerProvider);
 	$compileProvider.preAssignBindingsEnabled(true);
 	$routeProvider.eagerInstantiationEnabled(false)
 	// Check if a new cache is available on page load.

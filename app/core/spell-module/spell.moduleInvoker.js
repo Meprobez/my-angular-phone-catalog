@@ -19,6 +19,8 @@ angular.module('spell')
 				self.providers['$routeProvider'] = args[i];
 			if('html5Mode' in args[i]) 
 				self.providers['$locationProvider'] = args[i];
+		    if('state' in args[i])
+		    	self.providers['$stateProvider'] = args[i];
 		}
 	};
 

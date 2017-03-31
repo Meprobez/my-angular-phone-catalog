@@ -13,6 +13,7 @@ function phoneDetailController()
     self.log = log;
     self.returnData = returnData;
     self.activeImage = 0;
+    self.selected = false;
     self.setActiveImage = setActiveImage;
     
     function log()
@@ -28,5 +29,6 @@ function phoneDetailController()
     function setActiveImage($index)
     {
         self.activeImage = $index;
+        self.selected = !self.selected;
     }
 }

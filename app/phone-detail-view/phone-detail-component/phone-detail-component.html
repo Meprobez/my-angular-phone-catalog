@@ -1,7 +1,7 @@
 <div class="phone-detail-component">
   <div class="name-description-images">
       <div class="phone-image">
-          <img ng-src="application-data/{{$ctrl.phoneData.images[$ctrl.activeImage]}}">
+          <img ng-src="application-data/{{$ctrl.phoneData.images[$ctrl.activeImage]}}" ng-class="{selected:$ctrl.selected}" class="phone-image-img">
       <div>
       <div class="name-description">
             <span class="phone-name">{{$ctrl.phoneData.name}}</span><br>
