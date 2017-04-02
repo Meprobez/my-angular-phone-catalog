@@ -48,6 +48,7 @@ $routeProvider.when('/',{redirectTo: "/"});
 var phones = {
     name: 'phones',
     url: '/',
+    sticky: true,
     component:'phones'
   };
 

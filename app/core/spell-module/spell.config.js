@@ -1,2 +1,3 @@
 'use strict';
-angular.module('spell',['ngRoute'])
+
+angular.module('spell', ['ngRoute']);

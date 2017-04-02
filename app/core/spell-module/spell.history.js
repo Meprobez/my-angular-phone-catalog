@@ -1,37 +1,46 @@
 'use strict';
-angular.module('spell')
-.provider('$history',function()
-{
+
+angular.module('spell').provider('$history', function () {
 	var self = this;
 	self.history = [];
 
-	self.$get = ['$route',function($route)
-	{
+	self.$get = ['$route', function ($route) {
 		var $history = {
-			
-			historyMaintain:function($rootScope)
-			{
-				$rootScope.$on('$routeChangeSuccess',function(event,current,previous)
-				{
-					if(current&&current.$$route.originalPath!=$history.getHistory()[$history.getHistory().length-1])
-						$history.saveHistory(current.$$route.originalPath);
+
+			historyMaintain: function historyMaintain($rootScope) {
+				$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+					if (current && current.$$route.originalPath != $history.getHistory()[$history.getHistory().length - 1]) $history.saveHistory(current.$$route.originalPath);
 					$history.logHistory();
 				});
 			},
-		
-			saveHistory:function(url){ self.history.push(url); },
 
-			getPreviousPage:function(){ return self.history[self.history.length-1] },
+			saveHistory: function saveHistory(url) {
+				self.history.push(url);
+			},
 
-			getHistory:function(){ return self.history; },
+			getPreviousPage: function getPreviousPage() {
+				return self.history[self.history.length - 1];
+			},
 
-			logHistory:function() { console.log(self.history); },
+			getHistory: function getHistory() {
+				return self.history;
+			},
 
-			historySearch:function(url) { var exists = false; self.history.forEach(function(el){if(el===url)exists=true;}); },
+			logHistory: function logHistory() {
+				console.log(self.history);
+			},
 
-			removeLastEntry:function() { self.history=self.history.slice(0,self.history.length-1);}
-	
-		}
+			historySearch: function historySearch(url) {
+				var exists = false;self.history.forEach(function (el) {
+					if (el === url) exists = true;
+				});
+			},
+
+			removeLastEntry: function removeLastEntry() {
+				self.history = self.history.slice(0, self.history.length - 1);
+			}
+
+		};
 		return $history;
-   }];
-})
+	}];
+});

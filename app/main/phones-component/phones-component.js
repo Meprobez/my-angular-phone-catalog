@@ -1,31 +1,29 @@
 'use strict';
-angular.module('phonecatalog')
-.component('phones',
-{
-    templateUrl:'main/phones-component/phones-component.html',
-    controller:phonesController
+
+angular.module('phonecatalog').component('phones', {
+    templateUrl: 'main/phones-component/phones-component.html',
+    controller: phonesController
 });
 
-phonesController.$inject = ['getData','$rootScope'];
+phonesController.$inject = ['getData', '$rootScope'];
 
-function phonesController(getData,$rootScope)
-{
+function phonesController(getData, $rootScope) {
     var self = this;
-    
+
     self.$onInit = onInit;
     self.log = log;
 
     self.searchActiveClass = false;
-    self.filter="";
-    function onInit()
-    {
+    self.filter = "";
+    function onInit() {
         self.phones = [];
-        getData.getPhonesList().then(response => self.phones = response);
+        getData.getPhonesList().then(function (response) {
+            return self.phones = response;
+        });
         self.searchInput = "";
     };
 
-    function log()
-    {
+    function log() {
         console.log(self);
     };
 }
