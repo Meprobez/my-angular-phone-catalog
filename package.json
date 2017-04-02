@@ -15,9 +15,6 @@
     "karma-jasmine": "^0.3.8",
 	"karma-junit-reporter": "^0.4.1",
     "protractor": "^4.0.9",
-	"browserify":"14.1.0",
-	"exorcist":"0.4.0",
-	"watchify":"3.9.0",
 	"catw":"1.0.1",
 	"postcss":"5.2.16",
 	"postcss-cli":"3.0.0",
@@ -50,13 +47,12 @@
     "protractor": "protractor e2e-tests/protractor.conf.js",
 	
 	"watch-js": "cat ./bower_components/angular/*.min.js > ./bower_components/bower_components.min.js && cat ./bower_components/angular-*/*.min.js >> ./bower_components/bower_components.min.js && cat ./bower_components/*/*/*.min.js  >> ./bower_components/bower_components.min.js && cat ./bower_components/bower_components.min.js > ./app/static/list/bower_components.min.js",
-    "build-babel": "babel ./app/*/*/*.js -d ./babel",
-	"uglify": "uglifyjs -c -m  --reserve-domprops ./app/core/spell-module/*.js  -o ./app/static/list/spell.min.js && uglifyjs ./app/main/*.js -c -m  --reserve-domprops  -o ./app/static/list/main.min.js && uglifyjs ./app/phones-list-view/phones-component/*.js -c -m --resrve-domprops -o ./app/static/list/phones-component.min.js && uglifyjs ./app/phone-detail-view/phone-detail-component/*.js -c -m  --reserve-domprops  -o ./app/static/list/phone-detail-component.min.js &&  uglifyjs ./app/phone-detail-view/phone-content-component/*.js -c -m  --reserve-domprops  -o ./app/static/list/phone-content-component.min.js",
+    "babel-build": "babel ./app/*/*.js -d ./babeled && babel ./app/*/*/*.js -d ./babeled",
+	"uglify": "uglifyjs -c -m  --reserve-domprops ./babeled/app/core/spell-module/*.js  -o ./app/static/list/spell.min.js && uglifyjs ./babeled/app/main/*.js -c -m  --reserve-domprops  -o ./app/static/list/main.min.js && uglifyjs ./babeled/app/phones-list-view/phones-component/*.js -c -m --resrve-domprops -o ./app/static/list/phones-component.min.js && uglifyjs ./babeled/app/phone-detail-view/phone-detail-component/*.js -c -m  --reserve-domprops  -o ./app/static/list/phone-detail-component.min.js &&  uglifyjs ./babeled/app/phone-detail-view/phone-content-component/*.js -c -m  --reserve-domprops  -o ./app/static/list/phone-content-component.min.js",
 	"build-js": "cat ./app/static/list/spell.min.js >> ./app/static/list/bower_components.min.js && cat ./app/static/list/main.min.js  >> ./app/static/list/bower_components.min.js && cat ./app/static/list/phones-component.min.js >> ./app/static/list/bower_components.min.js && cat ./app/static/list/phone-detail-component.min.js >> ./app/static/list/bower_components.min.js && cat ./app/static/list/phone-content-component.min.js >> ./app/static/list/bower_components.min.js && cat ./app/static/list/bower_components.min.js > ./app/static/bundle.min.js",
-	
 	"build-css": "postcss -u autoprefixer -r ./app/*/*/*.css && cat ./app/*/*/*.css > ./app/static/bundle.css && minify ./app/static/bundle.css -o ./app/static/bundle.min.css && cat ./bower_components/bootstrap/dist/css/*.min.css >> ./app/static/bundle.min.css",
    
-    "build": "npm run watch-js && npm run uglify && npm run build-js && npm run build-css",
+    "build": "npm run watch-js && npm run babel-build && npm run uglify && npm run build-js && npm run build-css",
 	
     "update-index-async": "node -e \"var fs=require('fs'),indexFile='app/index-async.html',loaderFile='app/bower_components/angular-loader/angular-loader.min.js',loaderText=fs.readFileSync(loaderFile,'utf-8').split(/sourceMappingURL=angular-loader.min.js.map/).join('sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map'),indexText=fs.readFileSync(indexFile,'utf-8').split(/\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/).join('//@@NG_LOADER_START@@\\n'+loaderText+'    //@@NG_LOADER_END@@');fs.writeFileSync(indexFile,indexText);\""
   }
