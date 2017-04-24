@@ -2,9 +2,7 @@ logs/*
 !.gitkeep
 node_modules/
 tmp
-.idea
 .DS_Store
-angular-phonecat-snapshots
 bower_components/
 *.[oa]
 *~
@@ -13,5 +11,3 @@ bower_components/
 babeled/
 *.min.js
 *.min.css
-bundle.js
-bundle.css

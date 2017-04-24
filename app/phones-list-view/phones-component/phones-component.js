@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('phonecatalog').component('phones', {
-    templateUrl: 'main/phones-component/phones-component.html',
+    templateUrl: 'phones-list-view/phones-component/phones-component.html',
     controller: phonesController
 });
 

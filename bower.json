@@ -1,6 +1,6 @@
 {
-  "name": "my-angular-phone-catalog",
-  "description": "Angular phone catalog - official Angular example application",
+  "name": "2048",
+  "description": "2048 game",
   "version": "0.0.0",
   "homepage": "none",
   "license": "MIT",
@@ -11,10 +11,9 @@
     "angular-mocks": "1.6.x",
     "angular-resource": "1.6.x",
     "angular-route": "1.6.x",
-    "bootstrap": "3.3.x",
+    "bootstrap": "4.0.x",
 	"jquery": "3.2.x",
 	"angular-ui-router":"1.0.0-rc.1",
-	"xml2json.min.js":"1.2.x",
-	"normalize.css":"5.0.x"
+	"xml2json.min.js":"1.2.x"
   }
 }
